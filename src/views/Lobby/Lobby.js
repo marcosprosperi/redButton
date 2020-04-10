@@ -32,6 +32,7 @@ const Lobby = (props) => {
     })
 
     channel.bind(`${code}-lock`, function(info) {
+      console.log('cuando llega un mensaje...', info)
       if(info) {
         setPlayers(p => p.map((player) => {
           if (player.id === info.id) {
@@ -43,7 +44,6 @@ const Lobby = (props) => {
             return player
           }
         }))
-      //message.success(`${info.playerName} joined the game`)  
       }
     })
 
