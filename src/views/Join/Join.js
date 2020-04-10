@@ -13,7 +13,7 @@ const Join = (props) => {
   const handleJoinGame = async () => {
     if(code.length === 4 && name) {
       try {
-        const {data} = await axios.post('http://button-api.herokuapp.com/api/redbutton/join', { 
+        const {data} = await axios.post('https://button-api.herokuapp.com/api/redbutton/join', { 
           "code": code,
           "playerName": name
        })

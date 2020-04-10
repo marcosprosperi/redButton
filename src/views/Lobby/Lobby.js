@@ -19,7 +19,7 @@ const Lobby = (props) => {
     const pusher = new Pusher('a51cab9aff9db0953aa8', {
       cluster: 'us2',
       forceTLS: true,
-      authEndpoint: 'http://button-api.herokuapp.com/pusher/auth'
+      authEndpoint: 'https://button-api.herokuapp.com/pusher/auth'
     })
 
     Pusher.logToConsole = true
@@ -61,7 +61,7 @@ const Lobby = (props) => {
     
     if(code.length === 4 && avatarFile) {
       try {
-        const {data} = await axios.post('http://button-api.herokuapp.com/api/redbutton/lock', { 
+        const {data} = await axios.post('https://button-api.herokuapp.com/api/redbutton/lock', { 
           "code": code,
           "id": you.id,
           "avatar": avatarFile
