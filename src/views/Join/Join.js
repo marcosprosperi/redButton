@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useHistory } from "react-router-dom";
 import { Input, Button } from 'antd'
 import styles from "./Join.module.css"
+import { URL_API_DEV, URL_API_PROD } from '../../constants/Variables'
 
 const Join = (props) => {
 
@@ -13,7 +14,7 @@ const Join = (props) => {
   const handleJoinGame = async () => {
     if(code.length === 4 && name) {
       try {
-        const {data} = await axios.post('https://button-api.herokuapp.com/api/redbutton/join', { 
+        const {data} = await axios.post(`${URL_API_PROD}api/redbutton/join`, { 
           "code": code,
           "playerName": name
        })

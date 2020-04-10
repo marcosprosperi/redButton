@@ -5,7 +5,7 @@ import Pusher from 'pusher-js'
 import axios from 'axios'
 import { Button } from 'antd'
 import styles from './Lobby.module.css'
-
+import { URL_API_DEV, URL_API_PROD } from '../../constants/Variables'
 
 const Lobby = (props) => {
 
@@ -19,7 +19,7 @@ const Lobby = (props) => {
     const pusher = new Pusher('a51cab9aff9db0953aa8', {
       cluster: 'us2',
       forceTLS: true,
-      authEndpoint: 'https://button-api.herokuapp.com/pusher/auth'
+      authEndpoint: `${URL_API_PROD}pusher/auth`
     })
 
     Pusher.logToConsole = true
@@ -61,7 +61,7 @@ const Lobby = (props) => {
     
     if(code.length === 4 && avatarFile) {
       try {
-        const {data} = await axios.post('https://button-api.herokuapp.com/api/redbutton/lock', { 
+        const {data} = await axios.post(`${URL_API_PROD}api/redbutton/lock`, { 
           "code": code,
           "id": you.id,
           "avatar": avatarFile
