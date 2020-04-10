@@ -1,0 +1,25 @@
+.lobby {
+    width: 100%;
+}
+
+.playerList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.player {
+    margin-right:10px;
+}
+
+.yourAvatar {
+    margin-top:25px;
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    margin-top:10px;
+}

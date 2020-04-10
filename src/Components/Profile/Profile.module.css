@@ -1,0 +1,21 @@
+.avatarProfile {
+  border: 1px solid #ccc;
+}
+
+.like {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 40px;
+}
+
+.dislike {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 40px;
+}
+
+.profile {
+  position: relative;
+}

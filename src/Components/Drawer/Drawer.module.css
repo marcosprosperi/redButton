@@ -1,0 +1,12 @@
+.canvas {
+    border:1px solid #ccc;
+}
+
+.controls {
+    margin-top:5px;
+    text-align: center;
+}
+
+.controls button {
+    margin-right: 15px;
+}
