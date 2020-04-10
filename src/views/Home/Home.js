@@ -11,7 +11,7 @@ const Home = () => {
   const CreateNewGame = async () => {
     // TODO: AGREGAR UN LOADING
     try {
-      const {data} = await axios.post('http://localhost:3001/api/redbutton/create')
+      const {data} = await axios.post('http://button-api.herokuapp.com/api/redbutton/create')
       history.push({ pathname: "/join", state: { code: data.code }})
     } catch (error) {
       console.log('error en el create: ', error)
