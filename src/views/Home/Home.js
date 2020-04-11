@@ -3,7 +3,7 @@ import { Button } from "antd"
 import styles from "./Home.module.css"
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import { URL_API_DEV, URL_API_PROD } from '../../constants/Variables'
+import { URL_API } from '../../constants/Variables'
 import Profile from '../../Components/Profile/Profile'
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
   const CreateNewGame = async () => {
     // TODO: AGREGAR UN LOADING
     try {
-      const {data} = await axios.post(`${URL_API_PROD}api/redbutton/create`)
+      const {data} = await axios.post(`${URL_API}api/redbutton/create`)
       history.push({ pathname: "/join", state: { code: data.code }})
     } catch (error) {
       console.log('error en el create: ', error)

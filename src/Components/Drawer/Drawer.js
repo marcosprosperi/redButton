@@ -1,4 +1,5 @@
 import React, {useState, useImperativeHandle, forwardRef, useRef } from "react"
+import ReactDOM from 'react-dom'
 import CanvasDraw from "react-canvas-draw"
 import { SketchPicker  } from 'react-color'
 import { Popover, Button, Slider } from 'antd'
@@ -12,7 +13,7 @@ const Drawer = (props,ref) => {
 
     useImperativeHandle(ref, () => ({
       getAvatarString: () => {
-        return canvasDrawRef.current.getSaveData()
+        return ReactDOM.findDOMNode(canvasDrawRef.current).querySelector('canvas:nth-child(2)').toDataURL();
       }
     }))
 
@@ -33,7 +34,7 @@ const Drawer = (props,ref) => {
         <Button shape="circle" onClick={() => props.avatar.undo()}  > 
           <RollbackOutlined />
         </Button>
-        <Slider defaultValue={brushRadius} onChange={handleSetBrush}  />
+        <Slider min={1} max={100} defaultValue={brushRadius} onChange={handleSetBrush}  />
       </div>
     </div>
         

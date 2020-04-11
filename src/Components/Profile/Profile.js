@@ -11,7 +11,7 @@ const Profile = ({name, avatar, isLocked}) => {
     return (
         <div className={styles.profile} >
             <Title level={3}>{name}</Title>
-            <CanvasDraw className={styles.avatarProfile} disabled hideGrid saveData={avatar} canvasWidth={150} canvasHeight={200} />
+            <img src={avatar} className={styles.avatarProfile} Width={150} Height={200} />
             { isLocked ? <LikeTwoTone className={styles.like} twoToneColor="#52c41a" /> : <DislikeTwoTone className={styles.dislike} twoToneColor="#eb2f96" /> }
         </div>
     )
