@@ -5,7 +5,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
     "antd": "^3.26.13",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "pusher-js": "^5.1.1",
     "react": "^16.13.0",
     "react-canvas-draw": "^1.1.0",
